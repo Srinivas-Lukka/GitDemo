@@ -1,0 +1,300 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        },
+        {
+          "Id": "TS_004",
+          "Description": "To click on 'Add Code' link",
+          "Success": true,
+          "Model": {
+            "Id": "TS_004",
+            "Description": "To click on 'Add Code' link",
+            "PageObject": "Cart_AddCode_link",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Id": "TS_005",
+          "Description": "Waiting to load code popup…",
+          "Success": true,
+          "Model": {
+            "Id": "TS_005",
+            "Description": "Waiting to load code popup…",
+            "ActionKeyword": "waitfor(5)"
+          }
+        },
+        {
+          "Id": "TS_006",
+          "Description": "To enter coupon code",
+          "Success": true,
+          "Model": {
+            "Id": "TS_006",
+            "Description": "To enter coupon code",
+            "PageObject": "Cart_EnterCode_txtbox",
+            "ActionKeyword": "input"
+          }
+        },
+        {
+          "Id": "TS_007",
+          "Description": "To click on Submit button",
+          "Success": true,
+          "Model": {
+            "Id": "TS_007",
+            "Description": "To click on Submit button",
+            "PageObject": "Cart_CodeSubmitButton",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "To enter First name",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "To enter First name",
+                  "PageObject": "Cart_FirstName_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "To enter Last name",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "To enter Last name",
+                  "PageObject": "Cart_LastName_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_003",
+                "Description": "To select a value from Country",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_003",
+                  "Description": "To select a value from Country",
+                  "PageObject": "Cart_Country_dropdown",
+                  "ActionKeyword": "select"
+                }
+              },
+              {
+                "Id": "TS_004",
+                "Description": "To enter Address",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_004",
+                  "Description": "To enter Address",
+                  "PageObject": "Cart_Address_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_007",
+                "Description": "To enter Zipcode",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_007",
+                  "Description": "To enter Zipcode",
+                  "PageObject": "Cart_ZipCode_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "To enter Apt, Suite, Etc. ",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "To enter Apt, Suite, Etc. ",
+                  "PageObject": "Cart_Apt_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "FillShippingAdd",
+            "Description": "Running template FillShippingAdd",
+            "Success": true,
+            "Model": {
+              "Id": "FillShippingAdd",
+              "TemplateId": "FillShippingAdd",
+              "Description": "Running template FillShippingAdd",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_008",
+          "Description": "To fill Shipping address",
+          "Success": true,
+          "Model": {
+            "Id": "TS_008",
+            "Description": "To fill Shipping address",
+            "ActionKeyword": "FillShippingAdd"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "To enter Card number",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "To enter Card number",
+                  "PageObject": "Cart_CardNumber_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "waiting",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "waiting",
+                  "ActionKeyword": "waitfor(2)"
+                }
+              },
+              {
+                "Id": "TS_003",
+                "Description": "To enter Expiry date",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_003",
+                  "Description": "To enter Expiry date",
+                  "PageObject": "Cart_ExpiryDate",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_004",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_004",
+                  "ActionKeyword": "waitfor(2)"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "To enter CVV number",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "To enter CVV number",
+                  "PageObject": "Cart_CVV_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "FillPayment",
+            "Description": "Running template FillPayment",
+            "Success": true,
+            "Model": {
+              "Id": "FillPayment",
+              "TemplateId": "FillPayment",
+              "Description": "Running template FillPayment",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_009",
+          "Description": "Enter Payment Details",
+          "Success": true,
+          "Model": {
+            "Id": "TS_009",
+            "Description": "Enter Payment Details",
+            "ActionKeyword": "FillPayment"
+          }
+        },
+        {
+          "Id": "TS_010",
+          "Description": "Wait before clicking on next button",
+          "Success": true,
+          "Model": {
+            "Id": "TS_010",
+            "Description": "Wait before clicking on next button",
+            "ActionKeyword": "waitfor(5)"
+          }
+        },
+        {
+          "Id": "TS_011",
+          "Description": "Proceed Next to Consent screen",
+          "Success": true,
+          "Model": {
+            "Id": "TS_011",
+            "Description": "Proceed Next to Consent screen",
+            "PageObject": "Cart_Next_btn",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Error": {
+            "ClassName": "OpenQA.Selenium.WebDriverException",
+            "Message": "No such driver",
+            "Data": null,
+            "InnerException": null,
+            "HelpURL": null,
+            "StackTraceString": "   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)\r\n   at BizAPP.Automation.Common.SeleniumAction.<>c__DisplayClass9_0`1.<GetItem>b__0(IWebDriver _)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at BizAPP.Automation.Common.SeleniumAction.GetItem[T](ObjectRepositoryItem item)\r\n   at BizAPP.Automation.Common.SeleniumAction.ElementAction(ObjectRepositoryItem item, Func`2 callback)\r\n   at BizAPP.Automation.Framework.Actions.ClickAction.Execute(ObjectRepositoryItem item, String data)\r\n   at BizAPP.Automation.Framework.Execution.TestStepRunner.ExecuteStep(TestStep model, TestStepRun run, ITestNode node, TestDataMapping dataMapping, TestData data, String actionKeyword, AutomationService automationService)",
+            "RemoteStackTraceString": null,
+            "RemoteStackIndex": 0,
+            "ExceptionMethod": "8\nUnpackAndThrowOnError\nBizAPP.Automation.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53cc556ed6501d24\nOpenQA.Selenium.Remote.RemoteWebDriver\nVoid UnpackAndThrowOnError(OpenQA.Selenium.Remote.Response)",
+            "HResult": -2146233088,
+            "Source": "BizAPP.Automation.Common",
+            "WatsonBuckets": null
+          },
+          "Id": "TS_012",
+          "Description": "To select 'Are you 18 or above.?' radio button",
+          "Model": {
+            "Id": "TS_012",
+            "Description": "To select 'Are you 18 or above.?' radio button",
+            "PageObject": "Cart_Age_Yes_radio",
+            "ActionKeyword": "click"
+          }
+        }
+      ],
+      "AllResults": {},
+      "Id": "VC_TestCaseID_18",
+      "Description": "Place Order With Coupon Code",
+      "Model": {
+        "Id": "VC_TestCaseID_18",
+        "TemplateId": "PlaceOrderWithCouponCode",
+        "Description": "Place Order With Coupon Code",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Edge",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

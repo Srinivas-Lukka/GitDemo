@@ -1,0 +1,140 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "Open the Browser",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "Open the Browser",
+                  "ActionKeyword": "openBrowser"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "Navigate to URL",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "Navigate to URL",
+                  "ActionKeyword": "navigate"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "Enter Email",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "Enter Email",
+                  "PageObject": "SSO_Email",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_015",
+                "Description": "Enter Password",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_015",
+                  "Description": "Enter Password",
+                  "PageObject": "SSO_Password",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_016",
+                "Description": "Click on Submit",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_016",
+                  "Description": "Click on Submit",
+                  "PageObject": "SSO_Submit",
+                  "ActionKeyword": "click"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "VIBE_Login",
+            "Description": "Running template VIBE_Login",
+            "Success": true,
+            "Model": {
+              "Id": "VIBE_Login",
+              "TemplateId": "VIBE_Login",
+              "Description": "Running template VIBE_Login",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_001",
+          "Description": "To enter Email and password",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "To enter Email and password",
+            "PageObject": " ",
+            "ActionKeyword": "VIBE_Login"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "waiting…",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "waiting…",
+            "ActionKeyword": "waitfor"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [],
+            "AllResults": {},
+            "Id": "InviteAmbassador",
+            "Description": "Running template InviteAmbassador",
+            "Model": {
+              "Id": "InviteAmbassador",
+              "TemplateId": "InviteAmbassador",
+              "Description": "Running template InviteAmbassador",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Model": {
+            "Id": "TS_003",
+            "ActionKeyword": "InviteAmbassador"
+          }
+        }
+      ],
+      "AllResults": {
+        "SSO_Email": "srinivas.lukka@viome.com",
+        "SSO_Password": "welcomee"
+      },
+      "Id": "VC_TestCaseID_21",
+      "Description": "Inviting an Ambassador with Survey Questionnaire",
+      "Model": {
+        "Id": "VC_TestCaseID_21",
+        "TemplateId": "InvitingAmbassadorWithSurvey",
+        "Description": "Inviting an Ambassador with Survey Questionnaire",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {
+    "VC_TestCaseID_21.SSO_Email": "srinivas.lukka@viome.com",
+    "VC_TestCaseID_21.SSO_Password": "welcomee"
+  },
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

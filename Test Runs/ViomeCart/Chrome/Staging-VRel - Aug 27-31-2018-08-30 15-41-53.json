@@ -1,0 +1,293 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "Open the Browser",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "Open the Browser",
+                  "ActionKeyword": "openBrowser"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "Navigate to URL",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "Navigate to URL",
+                  "ActionKeyword": "navigate"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "Enter Email",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "Enter Email",
+                  "PageObject": "SSO_Email",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_015",
+                "Description": "Enter Password",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_015",
+                  "Description": "Enter Password",
+                  "PageObject": "SSO_Password",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_016",
+                "Description": "Click on Submit",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_016",
+                  "Description": "Click on Submit",
+                  "PageObject": "SSO_Submit",
+                  "ActionKeyword": "click"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "VIBE_Login",
+            "Description": "Running template VIBE_Login",
+            "Success": true,
+            "Model": {
+              "Id": "VIBE_Login",
+              "TemplateId": "VIBE_Login",
+              "Description": "Running template VIBE_Login",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_001",
+          "Description": "To enter Email and password",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "To enter Email and password",
+            "PageObject": " ",
+            "ActionKeyword": "VIBE_Login"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "waiting…",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "waiting…",
+            "ActionKeyword": "waitfor"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "Clicking on Approved Ambassador menu",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "Clicking on Approved Ambassador menu",
+                  "PageObject": "AmbaMgt_Approved",
+                  "ActionKeyword": "click"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "waiting…",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "waiting…",
+                  "ActionKeyword": "waitfor(5)"
+                }
+              },
+              {
+                "Id": "TS_003",
+                "Description": "Clicking on Invite Ambassador menu",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_003",
+                  "Description": "Clicking on Invite Ambassador menu",
+                  "PageObject": "AmbaMgt_InviteAmba",
+                  "ActionKeyword": "click"
+                }
+              },
+              {
+                "Id": "TS_004",
+                "Description": "waiting…",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_004",
+                  "Description": "waiting…",
+                  "ActionKeyword": "waitfor(5)"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "Entering Firstname",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "Entering Firstname",
+                  "PageObject": "AmbaMgt_InviteAmba_Fname_tbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_006",
+                "Description": "Entering Lastname",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_006",
+                  "Description": "Entering Lastname",
+                  "PageObject": "AmbaMgt_InviteAmba_Lname_tbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_007",
+                "Description": "Entering Ambassador code",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_007",
+                  "Description": "Entering Ambassador code",
+                  "PageObject": "AmbaMgt_InviteAmba_AmbaCode_tbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_008",
+                "Description": "Entering Email",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_008",
+                  "Description": "Entering Email",
+                  "PageObject": "AmbaMgt_InviteAmba_Email_tbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_009",
+                "Description": "Selecting Category",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_009",
+                  "Description": "Selecting Category",
+                  "PageObject": "AmbaMgt_InviteAmba_Category_ddown",
+                  "ActionKeyword": "select"
+                }
+              },
+              {
+                "Id": "TS_010",
+                "Description": "waitig to display successful alert.",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_010",
+                  "Description": "waitig to display successful alert.",
+                  "ActionKeyword": "waitfor(3)"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "InviteAmbassador",
+            "Description": "Running template InviteAmbassador",
+            "Success": true,
+            "Model": {
+              "Id": "InviteAmbassador",
+              "TemplateId": "InviteAmbassador",
+              "Description": "Running template InviteAmbassador",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Success": true,
+          "Model": {
+            "Id": "TS_003",
+            "ActionKeyword": "InviteAmbassador"
+          }
+        },
+        {
+          "Id": "TS_004",
+          "Description": "Clicking on Invite button",
+          "Success": true,
+          "Model": {
+            "Id": "TS_004",
+            "Description": "Clicking on Invite button",
+            "PageObject": "AmbaMgt_InviteAmba_Invite_btn",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Id": "TS_005",
+          "Description": "waiting…",
+          "Success": true,
+          "Model": {
+            "Id": "TS_005",
+            "Description": "waiting…",
+            "ActionKeyword": "waitfor(5)"
+          }
+        },
+        {
+          "Id": "TS_006",
+          "Description": "Clicking Ok on alert popup.",
+          "Success": true,
+          "Model": {
+            "Id": "TS_006",
+            "Description": "Clicking Ok on alert popup.",
+            "ActionKeyword": "acceptalert"
+          }
+        }
+      ],
+      "AllResults": {
+        "SSO_Email": "srinivas.lukka@viome.com",
+        "SSO_Password": "welcomee",
+        "AmbaMgt_InviteAmba_Fname_tbox": "Srinivas",
+        "AmbaMgt_InviteAmba_Lname_tbox": "Lukka",
+        "AmbaMgt_InviteAmba_AmbaCode_tbox": "FI>jf:IX",
+        "AmbaMgt_InviteAmba_Email_tbox": "anabelle.kilback@klingkessler.name",
+        "AmbaMgt_InviteAmba_Category_ddown": "Ambassador Gold"
+      },
+      "Id": "VC_TestCaseID_20",
+      "Description": "Inviting Ambassador",
+      "Success": true,
+      "Model": {
+        "Id": "VC_TestCaseID_20",
+        "TemplateId": "InvitingAmbassador",
+        "Description": "Inviting Ambassador",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {
+    "VC_TestCaseID_20.SSO_Email": "srinivas.lukka@viome.com",
+    "VC_TestCaseID_20.SSO_Password": "welcomee",
+    "VC_TestCaseID_20.AmbaMgt_InviteAmba_Fname_tbox": "Srinivas",
+    "VC_TestCaseID_20.AmbaMgt_InviteAmba_Lname_tbox": "Lukka",
+    "VC_TestCaseID_20.AmbaMgt_InviteAmba_AmbaCode_tbox": "FI>jf:IX",
+    "VC_TestCaseID_20.AmbaMgt_InviteAmba_Email_tbox": "anabelle.kilback@klingkessler.name",
+    "VC_TestCaseID_20.AmbaMgt_InviteAmba_Category_ddown": "Ambassador Gold"
+  },
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Success": true,
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

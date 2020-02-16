@@ -1,0 +1,121 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "Enter Email",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "Enter Email",
+                  "PageObject": "Cart_Email_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "Enter \"Create Password\"",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "Enter \"Create Password\"",
+                  "PageObject": "Cart_CreatePassword_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "CreateAccount",
+            "Description": "Running template CreateAccount",
+            "Success": true,
+            "Model": {
+              "Id": "CreateAccount",
+              "TemplateId": "CreateAccount",
+              "Description": "Running template CreateAccount",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Description": "Enter Email",
+          "Success": true,
+          "Model": {
+            "Id": "TS_003",
+            "Description": "Enter Email",
+            "PageObject": " ",
+            "ActionKeyword": "CreateAccount"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [],
+            "AllResults": {},
+            "Id": "ApplyCoupon",
+            "Description": "Running template ApplyCoupon",
+            "Model": {
+              "Id": "ApplyCoupon",
+              "TemplateId": "ApplyCoupon",
+              "Description": "Running template ApplyCoupon",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_004",
+          "Description": "Applying coupon",
+          "Model": {
+            "Id": "TS_004",
+            "Description": "Applying coupon",
+            "ActionKeyword": "ApplyCoupon"
+          }
+        }
+      ],
+      "AllResults": {
+        "Cart_Email_txtbox": "eldridge@smithamgoyette.name",
+        "Cart_CreatePassword_txtbox": "(kvxba(M"
+      },
+      "Id": "VC_TestCaseID_18",
+      "Description": "Place Order With Coupon Code",
+      "Model": {
+        "Id": "VC_TestCaseID_18",
+        "TemplateId": "PlaceOrderWithCouponCode",
+        "Description": "Place Order With Coupon Code",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {
+    "VC_TestCaseID_18.Cart_Email_txtbox": "eldridge@smithamgoyette.name",
+    "VC_TestCaseID_18.Cart_CreatePassword_txtbox": "(kvxba(M"
+  },
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

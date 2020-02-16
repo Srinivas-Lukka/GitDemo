@@ -1,0 +1,69 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [],
+            "AllResults": {},
+            "Id": "VIBE_Login",
+            "Description": "Running template VIBE_Login",
+            "Model": {
+              "Id": "VIBE_Login",
+              "TemplateId": "VIBE_Login",
+              "Description": "Running template VIBE_Login",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Description": "To enter Email and password",
+          "Model": {
+            "Id": "TS_003",
+            "Description": "To enter Email and password",
+            "PageObject": " ",
+            "ActionKeyword": "VIBE_Login"
+          }
+        }
+      ],
+      "AllResults": {},
+      "Id": "VC_TestCaseID_20",
+      "Description": "InviteAmbassador",
+      "Model": {
+        "Id": "VC_TestCaseID_20",
+        "TemplateId": "InviteAmbassador",
+        "Description": "InviteAmbassador",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

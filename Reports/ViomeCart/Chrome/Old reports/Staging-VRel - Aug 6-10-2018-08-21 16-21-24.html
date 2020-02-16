@@ -1,0 +1,755 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='' />
+    <meta name='robots' content='noodp, noydir' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://cdn.rawgit.com/anshooarora/extentreports-csharp/3b6cc04fd241b9782606e57fc5e84f0e42172c08/dist/css/extent.css' type='text/css' rel='stylesheet' />
+
+    <title>Automation Report</title>
+
+</head>
+    
+
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+		<nav>
+    <div class="nav-wrapper">
+        <a href="http://extentreports.relevantcodes.com" class="brand-logo blue darken-3">Extent</a>
+
+        <!-- slideout menu -->
+        <ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+            <li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+                        <li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+                <li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
+        </ul>
+
+        <!-- report name -->
+        <span class='report-name'>Automation Report</span>
+
+        <!-- report headline -->
+        <span class='report-headline'></span>
+
+        <!-- nav-right -->
+        <ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+
+            <a>
+                <span class='suite-start-time label blue darken-3'>8/21/2018 4:21:24 PM India Standard Time</span>
+            </a>
+            <a>
+                <span class="label blue darken-3">3.1.0</span>
+            </a>
+        </ul>
+    </div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+            
+<div id='test-view' class='view'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- test toggle -->
+            <div class='chip transparent'>
+                <a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+                    <i class='material-icons'>warning</i> Status
+                </a>
+                <ul id='tests-toggle' class='dropdown-content'>
+                    <li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+                    <li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+                    <li status='error'><a href='#!'>Error <i class='material-icons red-text lighten-2'>error</i></a></li>
+                    <li status='warning'><a href='#!'>Warning <i class='material-icons orange-text'>warning</i></a></li>
+                    <li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+                    <li class='divider'></li>
+                    <li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+                </ul>
+            </div>
+            <!-- test toggle -->
+
+            <!-- category toggle -->
+            <!-- category toggle -->
+
+            <!-- clear filters -->
+            <div class='chip transparent hide'>
+                <a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+                    <i class='material-icons'>close</i> Clear
+                </a>
+            </div>
+            <!-- clear filters -->
+
+            <!-- enable dashboard -->
+
+            <div id='toggle-test-view-charts' class='chip transparent'>
+                    <a class='' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+                        <i class='material-icons'>track_changes</i> Dashboard
+                    </a>
+            </div>
+            <!-- enable dashboard -->
+
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+
+
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m6 l6 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box'>
+                    <canvas id='parent-analysis' width='100' height='80'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span><span class='strong'>1</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong'>0</span> test(s) failed, <span class='strong'>0</span> others
+                </div>
+            </div>
+        </div>
+
+            <div class='col s12 m6 l6 np-h'>
+                <div class='card-panel nm-v'>
+                    <div class='left panel-name'>Steps</div>
+                    <div class='chart-box'>
+                        <canvas id='child-analysis' width='100' height='80'></canvas>
+                    </div>
+                    <div class='block text-small'>
+                        <span><span class='strong'>28</span> step(s) passed</span>
+                    </div>
+                    <div class='block text-small'>
+                        <span class='strong'>0</span> step(s) failed, <span class='strong'>0</span> others
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Tests</h5>
+
+            <ul id='test-collection' class='test-collection'>
+
+
+                    <li class='test displayed active has-leaf pass' status='pass' test-id='1'>
+                        <div class='test-heading'>
+                            <span class='test-name'>VC_TestCaseID_14 - Purchasing a product with UK contry as an Adult</span>
+                            <span class='test-time'>8/21/2018 4:21:24 PM</span>
+                            <span class='test-status right pass'>Pass</span>
+                        </div>
+                        <div class='test-content hide'>
+                                <div class='test-time-info'>
+                                    <span class='label start-time'>8/21/2018 4:21:24 PM</span>
+                                    <span class='label end-time'>8/21/2018 4:24:40 PM</span>
+                                    <span class='label time-taken grey lighten-1 white-text'>00:03:15.6597556</span>
+                                </div>
+                                    <div class='test-desc'>Purchasing a product with UK contry as an Adult</div>
+                                    <div class='test-steps'>
+                                        <table class='bordered table-results'>
+                                            <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>Timestamp</th>
+                                                    <th>Action</th>
+                                                    <th>Details</th>
+                                                    <th>Execution Condition</th>
+                                                    <th>Expected Value</th>
+                                                    <th>Actual Value</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:21:27 PM</td>
+                                                    <td class='step-details' style="word-break:normal">openBrowser</td>
+                                                    <td class='step-details'>Open the Browser</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:21:33 PM</td>
+                                                    <td class='step-details' style="word-break:normal">navigate</td>
+                                                    <td class='step-details'>Navigate to URL</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:22:05 PM</td>
+                                                    <td class='step-details' style="word-break:normal">TEMPLATE</td>
+                                                    <td class='step-details'>CreateAccount</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:22:07 PM</td>
+                                                    <td class='step-details' style="word-break:normal">TEMPLATE</td>
+                                                    <td class='step-details'>FillShippingCanUK</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:24:40 PM</td>
+                                                    <td class='step-details' style="word-break:normal">TEMPLATE</td>
+                                                    <td class='step-details'>FillPayment</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:25:18 PM</td>
+                                                    <td class='step-details' style="word-break:normal">click</td>
+                                                    <td class='step-details'>Proceed Next to Concent screen</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:25:18 PM</td>
+                                                    <td class='step-details' style="word-break:normal">click</td>
+                                                    <td class='step-details'>To select 'Yes, I am 18 or above' radio button</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:25:30 PM</td>
+                                                    <td class='step-details' style="word-break:normal">waitfor(10)</td>
+                                                    <td class='step-details'>waiting…</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:25:30 PM</td>
+                                                    <td class='step-details' style="word-break:normal">JS(JS_button_click)</td>
+                                                    <td class='step-details'>To check 'I have read the informed…' consent</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:25:30 PM</td>
+                                                    <td class='step-details' style="word-break:normal">click</td>
+                                                    <td class='step-details'>To select Northen Ireland checkcbox</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:25:30 PM</td>
+                                                    <td class='step-details' style="word-break:normal">click</td>
+                                                    <td class='step-details'>Clik on Place Order</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:26:00 PM</td>
+                                                    <td class='step-details' style="word-break:normal">waitfor(30)</td>
+                                                    <td class='step-details'>Wait for success page to display</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:26:10 PM</td>
+                                                    <td class='step-details' style="word-break:normal">waitForUrlContains(cartsuccess)</td>
+                                                    <td class='step-details'>Check document/page url is cart success</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:26:10 PM</td>
+                                                    <td class='step-details' style="word-break:normal">verifyMatches([0-9]{9,})</td>
+                                                    <td class='step-details'>Assert order number is numeric and has 9+ digits</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'>[0-9]{9,}</td>
+                                                    <td class='timestamp'>220247019</td>
+                                                    <td class='timestamp'>True</td>
+                                                </tr>
+                                                <tr class='log' status='pass'>
+                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                    <td class='timestamp'>8/21/2018 4:26:11 PM</td>
+                                                    <td class='step-details' style="word-break:normal">capture</td>
+                                                    <td class='step-details'>Capture Order Number</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'>220247019</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul class='collapsible node-list' data-collapsible='accordion'>
+                                            <li class='node level-1 pass' status='pass' test-id='2'>
+                                                <div class='collapsible-header'>
+                                                    <div class='node-name'>Running template CreateAccount</div>
+                                                    <span class='node-time'>8/21/2018 4:21:33 PM</span>
+                                                    <span class='test-status right pass'>Pass</span>
+                                                </div>
+                                                <div class='collapsible-body'>
+                                                    <div class='node-steps'>
+                                                        <table class='bordered table-results'>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Status</th>
+                                                                    <th>Timestamp</th>
+                                                                    <th>Action</th>
+                                                                    <th>Details</th>
+                                                                    <th>Execution Condition</th>
+                                                                    <th>Expected Value</th>
+                                                                    <th>Actual Value</th>
+                                                                    <th>Result</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:05 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>Enter Email</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:05 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>Enter "Create Password"</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class='node level-1 pass' status='pass' test-id='3'>
+                                                <div class='collapsible-header'>
+                                                    <div class='node-name'>Running template FillShippingCanUK</div>
+                                                    <span class='node-time'>8/21/2018 4:22:05 PM</span>
+                                                    <span class='test-status right pass'>Pass</span>
+                                                </div>
+                                                <div class='collapsible-body'>
+                                                    <div class='node-steps'>
+                                                        <table class='bordered table-results'>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Status</th>
+                                                                    <th>Timestamp</th>
+                                                                    <th>Action</th>
+                                                                    <th>Details</th>
+                                                                    <th>Execution Condition</th>
+                                                                    <th>Expected Value</th>
+                                                                    <th>Actual Value</th>
+                                                                    <th>Result</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:06 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter First name</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:06 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter Last name</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:06 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">select</td>
+                                                                    <td class='step-details'>To select a value from Country</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:06 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter Address</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:06 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter Apt, Suite, Etc.</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:07 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter City</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:07 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter Province</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:22:07 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter Zipcode</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class='node level-1 pass' status='pass' test-id='4'>
+                                                <div class='collapsible-header'>
+                                                    <div class='node-name'>Running template FillPayment</div>
+                                                    <span class='node-time'>8/21/2018 4:22:07 PM</span>
+                                                    <span class='test-status right pass'>Pass</span>
+                                                </div>
+                                                <div class='collapsible-body'>
+                                                    <div class='node-steps'>
+                                                        <table class='bordered table-results'>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Status</th>
+                                                                    <th>Timestamp</th>
+                                                                    <th>Action</th>
+                                                                    <th>Details</th>
+                                                                    <th>Execution Condition</th>
+                                                                    <th>Expected Value</th>
+                                                                    <th>Actual Value</th>
+                                                                    <th>Result</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:24:40 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter Card number</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:24:40 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter Expiry date</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 4:24:40 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>To enter CVV number</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                    </ul>
+
+                        </div>
+                    </li>
+            </ul>
+        </div>
+    </div>
+    <!-- subview left -->
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='test-name'></h5>
+
+            <div id='step-filters' class="right">
+                <span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+                <span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+                <span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+                <span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+                <span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+                <span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+                <span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+                <span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+            </div>
+        </div>
+    </div>
+    <!-- subview right -->
+
+</div>
+<!-- test view -->
+            <!-- category view -->
+            
+
+
+    <div id='exception-view' class='view hide'>
+
+        <section id='controls'>
+            <div class='controls grey lighten-4'>
+                <!-- search -->
+                <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                    <a href="#" class='search-div'>
+                        <i class='material-icons'>search</i> Search
+                    </a>
+
+                    <div class='input-field left hide'>
+                        <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                    </div>
+                </div>
+                <!-- search -->
+            </div>
+        </section>
+
+        <div class='subview-left left'>
+
+            <div class='view-summary'>
+                <h5>Exceptions</h5>
+                <ul id='exception-collection' class='exception-collection'>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class='subview-right left'>
+            <div class='view-summary'>
+                <h5 class='exception-name'></h5>
+            </div>
+        </div>
+    </div>
+<!-- exception view -->
+            
+
+
+<div id='dashboard-view' class='view hide'>
+    <div class='card-panel transparent np-v'>
+        <h5>Dashboard</h5>
+
+        <div class='row'>
+            <div class='col s2'>
+                <div class='card-panel r'>
+ <span>Tests</span>                     <div class='panel-lead'>1</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+ <span>Steps</span>                     <div class='panel-lead'>28</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+                    Start
+                    <div class='panel-lead'>8/21/2018 4:21:24 PM</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+                    End
+                    <div class='panel-lead'>8/21/2018 4:26:17 PM</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+                    Time Taken
+                    <div class='panel-lead'>00:04:53.1816189</div>
+                </div>
+            </div>
+
+                <div class='col s4'>
+                    <div class='card-panel'>
+                        <span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Value</th>
+                            </tr>
+                                <tr>
+                                    <td>Sprint</td>
+                                    <td>VRel - Aug 6-10</td>
+                                </tr>
+                                <tr>
+                                    <td>Test Environment</td>
+                                    <td>Staging</td>
+                                </tr>
+                                <tr>
+                                    <td>Host Name</td>
+                                    <td>SRINIVAS</td>
+                                </tr>
+                                <tr>
+                                    <td>OS Environment</td>
+                                    <td>Microsoft Windows NT 6.2.9200.0</td>
+                                </tr>
+                                <tr>
+                                    <td>User Name</td>
+                                    <td>Srinivas</td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+<!-- dashboard view -->
+            
+
+
+    <div id='testrunner-logs-view' class='view hide'>
+        <div class='card-panel transparent np-v'>
+            <h5>TestRunner Logs</h5>
+
+            <div class='card-panel'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running module ViomeCart - This Module Validates the Activity of Buying the Viome product  started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test case VC_TestCaseID_14 - Purchasing a product with UK contry as an Adult started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - Open the Browser started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - Open the Browser ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - Navigate to URL started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - Navigate to URL ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_003 - Enter Email started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template CreateAccount started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - Enter Email started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Email_txtbox', xpath '//input[@name='buyerEmail']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data '$EMAIL$', value resolved to 'khalil@jerde.info'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - Enter Email ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - Enter "Create Password" started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_CreatePassword_txtbox', xpath '//input[@name='password']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data '$password$', value resolved to '%{xJm;T?'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - Enter "Create Password" ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template CreateAccount ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_003 - Enter Email ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_004 - To fill Shipping address started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template FillShippingCanUK started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - To enter First name started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_FirstName_txtbox', xpath '//input[@name='shippingfirstName']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data 'Velda'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - To enter First name ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - To enter Last name started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_LastName_txtbox', xpath '//input[@name='shippinglastName']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data 'Mancilla'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - To enter Last name ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_003 - To select a value from Country started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Country_dropdown', xpath '//select[@name='shippingcountry']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data 'United Kingdom'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_003 - To select a value from Country ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_004 - To enter Address started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Address_txtbox', xpath '//input[@name='shippingaddressLine1']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data 'Tremont, Michael A Esq'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_004 - To enter Address ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_005 - To enter Apt, Suite, Etc.  started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Apt_txtbox', xpath '//input[@name='shippingaddressLine2']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data '7866 Renshaw St #283'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_005 - To enter Apt, Suite, Etc.  ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_006 - To enter City started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_City_txtbox', xpath '//input[@name='shippingcity']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data 'Parwich'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_006 - To enter City ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_007 - To enter Province started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Province_txtbox', xpath '//input[@name='shippingstate']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data 'Parwich'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_007 - To enter Province ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_008 - To enter Zipcode started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_ZipCode_txtbox', xpath '//input[@name='shippingzipCode']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data 'NW8 9BD'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_008 - To enter Zipcode ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template FillShippingCanUK ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_004 - To fill Shipping address ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_005 - Enter Payment Details started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template FillPayment started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_007 - To enter Card number started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_CardNumber_txtbox', xpath '//input[@name='cardNumber']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data '4111111111111111'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_007 - To enter Card number ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_009 - To enter Expiry date started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_ExpiryDate', xpath '//input[@name='expiry']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data '0220'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_009 - To enter Expiry date ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_011 - To enter CVV number started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_CVV_txtbox', xpath '//input[@name='cvv']', Frame ''<br /><span style='color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using data '123'<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_011 - To enter CVV number ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template FillPayment ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_005 - Enter Payment Details ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_006 - Proceed Next to Concent screen started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Next_btn', xpath '//a[contains(text(),'Next')]', Frame ''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_006 - Proceed Next to Concent screen ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_007 - To select 'Yes, I am 18 or above' radio button started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Age_Yes_radio', xpath '//label[.=' Yes, I am 18 or older.']', Frame ''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_007 - To select 'Yes, I am 18 or above' radio button ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_008 - waiting… started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_008 - waiting… ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_009 - To check 'I have read the informed…' consent started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_Consent_agree_cbox', xpath '//label[contains(text(),'Informed Consent')]', Frame ''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_009 - To check 'I have read the informed…' consent ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_010 - To select Northen Ireland checkcbox started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_UkNorthernIreland_chkbox', xpath '//label[contains(text(),'in Northern Ireland')]', Frame ''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_010 - To select Northen Ireland checkcbox ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_011 - Clik on Place Order started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_PlaceOrder_btn', xpath '//a[contains(text(),'Place Order')]', Frame ''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_011 - Clik on Place Order ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_012 - Wait for success page to display started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_012 - Wait for success page to display ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_013 - Check document/page url is cart success started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_013 - Check document/page url is cart success ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_014 - Assert order number is numeric and has 9+ digits started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_OrderNumber', xpath '//span[@id='createdOrderId']', Frame ''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VerifyMatchesAction - Validation Result:'True', Expected:'[0-9]{9,}', Actual:'220247019'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_014 - Assert order number is numeric and has 9+ digits ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_015 - Capture Order Number started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'Cart_OrderNumber', xpath '//span[@id='createdOrderId']', Frame ''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CaptureTextAction - Validation Result:'220247019', Expected:'', Actual:''<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_015 - Capture Order Number ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test case VC_TestCaseID_14 - Purchasing a product with UK contry as an Adult ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running module ViomeCart - This Module Validates the Activity of Buying the Viome product  ended<br />            </div>
+        </div>        
+    </div>
+<!-- exception view -->
+
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+			    passParent: 1,
+			    failParent: 0,
+			    fatalParent: 0,
+			    errorParent: 0,
+			    warningParent: 0,
+			    skipParent: 0,
+				
+			    passChild: 28,
+			    failChild: 0,
+			    fatalChild: 0,
+			    errorChild: 0,
+			    warningChild: 0,
+			    skipChild: 0,
+			    infoChild: 0,
+				
+			    passGrandChild: 0,
+			    failGrandChild: 0,
+			    fatalGrandChild: 0,
+			    errorGrandChild: 0,
+			    warningGrandChild: 0,
+			    skipGrandChild: 0,
+			    infoGrandChild: 0
+			};
+		</script>
+
+		<script src='https://cdn.rawgit.com/anshooarora/extentreports-csharp/e468054d67d93c2fd9c8f0f60e31a7ea09fa3bf6/dist/js/extent.js' type='text/javascript'></script>
+		
+		    <script type='text/javascript'>
+			    $(document).ready(function() {
+				    $('#test-view-charts').addClass('hide');
+			    });
+		    </script>
+		
+		            <script type='text/javascript'>
+			    
+                $(document).ready(function() {
+                    
+                });
+            
+            </script>
+	</body>
+	
+</html>

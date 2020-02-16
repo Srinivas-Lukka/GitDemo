@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='' />
+    <meta name='robots' content='noodp, noydir' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://cdn.rawgit.com/anshooarora/extentreports-csharp/3b6cc04fd241b9782606e57fc5e84f0e42172c08/dist/css/extent.css' type='text/css' rel='stylesheet' />
+
+    <title>Automation Report</title>
+
+</head>
+    
+
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+		<nav>
+    <div class="nav-wrapper">
+        <a href="http://extentreports.relevantcodes.com" class="brand-logo blue darken-3">Extent</a>
+
+        <!-- slideout menu -->
+        <ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+            <li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+                        <li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+                <li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
+        </ul>
+
+        <!-- report name -->
+        <span class='report-name'>Automation Report</span>
+
+        <!-- report headline -->
+        <span class='report-headline'></span>
+
+        <!-- nav-right -->
+        <ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+
+            <a>
+                <span class='suite-start-time label blue darken-3'>8/21/2018 6:55:47 PM India Standard Time</span>
+            </a>
+            <a>
+                <span class="label blue darken-3">3.1.0</span>
+            </a>
+        </ul>
+    </div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+            
+<div id='test-view' class='view'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- test toggle -->
+            <div class='chip transparent'>
+                <a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+                    <i class='material-icons'>warning</i> Status
+                </a>
+                <ul id='tests-toggle' class='dropdown-content'>
+                    <li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+                    <li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+                    <li status='error'><a href='#!'>Error <i class='material-icons red-text lighten-2'>error</i></a></li>
+                    <li status='warning'><a href='#!'>Warning <i class='material-icons orange-text'>warning</i></a></li>
+                    <li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+                    <li class='divider'></li>
+                    <li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+                </ul>
+            </div>
+            <!-- test toggle -->
+
+            <!-- category toggle -->
+            <!-- category toggle -->
+
+            <!-- clear filters -->
+            <div class='chip transparent hide'>
+                <a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+                    <i class='material-icons'>close</i> Clear
+                </a>
+            </div>
+            <!-- clear filters -->
+
+            <!-- enable dashboard -->
+
+            <div id='toggle-test-view-charts' class='chip transparent'>
+                    <a class='' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+                        <i class='material-icons'>track_changes</i> Dashboard
+                    </a>
+            </div>
+            <!-- enable dashboard -->
+
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+
+
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m6 l6 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box'>
+                    <canvas id='parent-analysis' width='100' height='80'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span><span class='strong'>0</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong'>1</span> test(s) failed, <span class='strong'>0</span> others
+                </div>
+            </div>
+        </div>
+
+            <div class='col s12 m6 l6 np-h'>
+                <div class='card-panel nm-v'>
+                    <div class='left panel-name'>Steps</div>
+                    <div class='chart-box'>
+                        <canvas id='child-analysis' width='100' height='80'></canvas>
+                    </div>
+                    <div class='block text-small'>
+                        <span><span class='strong'>2</span> step(s) passed</span>
+                    </div>
+                    <div class='block text-small'>
+                        <span class='strong'>2</span> step(s) failed, <span class='strong'>0</span> others
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Tests</h5>
+
+            <ul id='test-collection' class='test-collection'>
+
+
+                    <li class='test displayed active has-leaf fail' status='fail' test-id='1'>
+                        <div class='test-heading'>
+                            <span class='test-name'>VC_TestCaseID_20 - InviteAmbassador</span>
+                            <span class='test-time'>8/21/2018 6:55:47 PM</span>
+                            <span class='test-status right fail'>Fail</span>
+                        </div>
+                        <div class='test-content hide'>
+                                <div class='test-time-info'>
+                                    <span class='label start-time'>8/21/2018 6:55:47 PM</span>
+                                    <span class='label end-time'>8/21/2018 6:55:59 PM</span>
+                                    <span class='label time-taken grey lighten-1 white-text'>00:00:11.2129943</span>
+                                </div>
+                                    <div class='test-desc'>InviteAmbassador</div>
+                                    <div class='test-steps'>
+                                        <table class='bordered table-results'>
+                                            <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>Timestamp</th>
+                                                    <th>Action</th>
+                                                    <th>Details</th>
+                                                    <th>Execution Condition</th>
+                                                    <th>Expected Value</th>
+                                                    <th>Actual Value</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class='log' status='fail'>
+                                                    <td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+                                                    <td class='timestamp'>8/21/2018 6:55:59 PM</td>
+                                                    <td class='step-details' style="word-break:normal">TEMPLATE</td>
+                                                    <td class='step-details'>VIBE_Login</td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                    <td class='timestamp'></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul class='collapsible node-list' data-collapsible='accordion'>
+                                            <li class='node level-1 fail' status='fail' test-id='2'>
+                                                <div class='collapsible-header'>
+                                                    <div class='node-name'>Running template VIBE_Login</div>
+                                                    <span class='node-time'>8/21/2018 6:55:48 PM</span>
+                                                    <span class='test-status right fail'>Fail</span>
+                                                </div>
+                                                <div class='collapsible-body'>
+                                                    <div class='node-steps'>
+                                                        <table class='bordered table-results'>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Status</th>
+                                                                    <th>Timestamp</th>
+                                                                    <th>Action</th>
+                                                                    <th>Details</th>
+                                                                    <th>Execution Condition</th>
+                                                                    <th>Expected Value</th>
+                                                                    <th>Actual Value</th>
+                                                                    <th>Result</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 6:55:51 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">openBrowser</td>
+                                                                    <td class='step-details'>Open the Browser</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='pass'>
+                                                                    <td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+                                                                    <td class='timestamp'>8/21/2018 6:55:58 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">navigate</td>
+                                                                    <td class='step-details'>Navigate to URL</td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                                <tr class='log' status='fail'>
+                                                                    <td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+                                                                    <td class='timestamp'>8/21/2018 6:55:59 PM</td>
+                                                                    <td class='step-details' style="word-break:normal">input</td>
+                                                                    <td class='step-details'>no such element: Unable to locate element: {"method":"id","selector":"bza-login"}
+  (Session info: chrome=68.0.3440.106)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)<br/><a href='data:image/gif;base64,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AABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCVqiThUAAAL0SURBVKsAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgAAAABAkbAKAAAAAFAkrAIAAAAAFAmrAAAAAABFwioAAAAAQJGwCgAAAABQJKwCAAAAABQJqwAAAAAARcIqAAAAAECRsAoAAAAAUCSsAgAAAAAUCasAAAAAAEXCKgDA/2/HjgUAAAAABvlbj2F/YQQAADCJVQAAAACASawCAAAAAExiFQAAAABgEqsAAAAAAJNYBQAAAACYxCoAAAAAwCRWAQAAAAAmsQoAAAAAMIlVAAAAAIBJrAIAAAAATGIVAAAAAGASqwAAAAAAk1gFAAAAAJjEKgAAAADAJFYBAAAAACaxCgAAAAAwiVUAAAAAgEmsAgAAAABMYhUAAAAAYBKrAAAAAACTWAUAAAAAmMQqAAAAAMAUf6fj+XoDoAEAAAAASUVORK5CYII=' data-featherlight='image'><span class='label grey white-text'>VC_TestCaseID_20.TS_005.SSO_Email</span></a></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                    <td class='timestamp'></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                    </ul>
+
+                        </div>
+                    </li>
+            </ul>
+        </div>
+    </div>
+    <!-- subview left -->
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='test-name'></h5>
+
+            <div id='step-filters' class="right">
+                <span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+                <span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+                <span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+                <span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+                <span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+                <span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+                <span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+                <span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+            </div>
+        </div>
+    </div>
+    <!-- subview right -->
+
+</div>
+<!-- test view -->
+            <!-- category view -->
+            
+
+
+    <div id='exception-view' class='view hide'>
+
+        <section id='controls'>
+            <div class='controls grey lighten-4'>
+                <!-- search -->
+                <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                    <a href="#" class='search-div'>
+                        <i class='material-icons'>search</i> Search
+                    </a>
+
+                    <div class='input-field left hide'>
+                        <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                    </div>
+                </div>
+                <!-- search -->
+            </div>
+        </section>
+
+        <div class='subview-left left'>
+
+            <div class='view-summary'>
+                <h5>Exceptions</h5>
+                <ul id='exception-collection' class='exception-collection'>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class='subview-right left'>
+            <div class='view-summary'>
+                <h5 class='exception-name'></h5>
+            </div>
+        </div>
+    </div>
+<!-- exception view -->
+            
+
+
+<div id='dashboard-view' class='view hide'>
+    <div class='card-panel transparent np-v'>
+        <h5>Dashboard</h5>
+
+        <div class='row'>
+            <div class='col s2'>
+                <div class='card-panel r'>
+ <span>Tests</span>                     <div class='panel-lead'>1</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+ <span>Steps</span>                     <div class='panel-lead'>4</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+                    Start
+                    <div class='panel-lead'>8/21/2018 6:55:47 PM</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+                    End
+                    <div class='panel-lead'>8/21/2018 6:56:04 PM</div>
+                </div>
+            </div>
+            <div class='col s2'>
+                <div class='card-panel r'>
+                    Time Taken
+                    <div class='panel-lead'>00:00:16.5492874</div>
+                </div>
+            </div>
+
+                <div class='col s4'>
+                    <div class='card-panel'>
+                        <span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Value</th>
+                            </tr>
+                                <tr>
+                                    <td>Sprint</td>
+                                    <td>VRel - Aug 6-10</td>
+                                </tr>
+                                <tr>
+                                    <td>Test Environment</td>
+                                    <td>Staging</td>
+                                </tr>
+                                <tr>
+                                    <td>Host Name</td>
+                                    <td>SRINIVAS</td>
+                                </tr>
+                                <tr>
+                                    <td>OS Environment</td>
+                                    <td>Microsoft Windows NT 6.2.9200.0</td>
+                                </tr>
+                                <tr>
+                                    <td>User Name</td>
+                                    <td>Srinivas</td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+<!-- dashboard view -->
+            
+
+
+    <div id='testrunner-logs-view' class='view hide'>
+        <div class='card-panel transparent np-v'>
+            <h5>TestRunner Logs</h5>
+
+            <div class='card-panel'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running module ViomeCart - This Module Validates the Activity of Buying the Viome product  started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test case VC_TestCaseID_20 - InviteAmbassador started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - To enter Email and password started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template VIBE_Login started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - Open the Browser started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - Open the Browser ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - Navigate to URL started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_002 - Navigate to URL ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_005 - Enter Email started<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using page object 'SSO_Email', xpath './/*[@id='email']', Frame 'id=bza-login,class=embed-responsive-item'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exception occurred: no such element: Unable to locate element: {"method":"id","selector":"bza-login"}
+  (Session info: chrome=68.0.3440.106)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_005 - Enter Email ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template VIBE_Login failed with error no such element: Unable to locate element: {"method":"id","selector":"bza-login"}
+  (Session info: chrome=68.0.3440.106)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step template VIBE_Login ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test step TS_001 - To enter Email and password ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running test case VC_TestCaseID_20 - InviteAmbassador ended<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running module ViomeCart - This Module Validates the Activity of Buying the Viome product  ended<br />            </div>
+        </div>        
+    </div>
+<!-- exception view -->
+
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+			    passParent: 0,
+			    failParent: 1,
+			    fatalParent: 0,
+			    errorParent: 0,
+			    warningParent: 0,
+			    skipParent: 0,
+				
+			    passChild: 2,
+			    failChild: 2,
+			    fatalChild: 0,
+			    errorChild: 0,
+			    warningChild: 0,
+			    skipChild: 0,
+			    infoChild: 0,
+				
+			    passGrandChild: 0,
+			    failGrandChild: 0,
+			    fatalGrandChild: 0,
+			    errorGrandChild: 0,
+			    warningGrandChild: 0,
+			    skipGrandChild: 0,
+			    infoGrandChild: 0
+			};
+		</script>
+
+		<script src='https://cdn.rawgit.com/anshooarora/extentreports-csharp/e468054d67d93c2fd9c8f0f60e31a7ea09fa3bf6/dist/js/extent.js' type='text/javascript'></script>
+		
+		    <script type='text/javascript'>
+			    $(document).ready(function() {
+				    $('#test-view-charts').addClass('hide');
+			    });
+		    </script>
+		
+		            <script type='text/javascript'>
+			    
+                $(document).ready(function() {
+                    
+                });
+            
+            </script>
+	</body>
+	
+</html>

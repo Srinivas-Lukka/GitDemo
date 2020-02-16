@@ -1,0 +1,109 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        },
+        {
+          "Id": "TS_003",
+          "Description": "To enter Email",
+          "Success": true,
+          "Model": {
+            "Id": "TS_003",
+            "Description": "To enter Email",
+            "PageObject": "Cart_Email_txtbox",
+            "ActionKeyword": "input"
+          }
+        },
+        {
+          "Id": "TS_004",
+          "Description": "To enter password",
+          "Success": true,
+          "Model": {
+            "Id": "TS_004",
+            "Description": "To enter password",
+            "PageObject": "Cart_CreatePassword_txtbox    ",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Id": "TS_005",
+          "Description": "Wait till login popup displays",
+          "Success": true,
+          "Model": {
+            "Id": "TS_005",
+            "Description": "Wait till login popup displays",
+            "ActionKeyword": "waitFor"
+          }
+        },
+        {
+          "Error": {
+            "ClassName": "OpenQA.Selenium.NoSuchElementException",
+            "Message": "no such element: Unable to locate element: {\"method\":\"class name\",\"selector\":\"embed-responsive-item\"}\n  (Session info: chrome=68.0.3440.106)\n  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)",
+            "Data": null,
+            "InnerException": null,
+            "HelpURL": null,
+            "StackTraceString": "   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByClassName(String className)\r\n   at OpenQA.Selenium.By.<>c__DisplayClass20_0.<ClassName>b__0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)\r\n   at BizAPP.Automation.Common.SeleniumAction.SwitchToFrame(String frame)\r\n   at BizAPP.Automation.Common.SeleniumAction.GetItem[T](ObjectRepositoryItem item)\r\n   at BizAPP.Automation.Common.SeleniumAction.ElementAction(ObjectRepositoryItem item, Func`2 callback)\r\n   at BizAPP.Automation.Framework.Actions.InputAction.Execute(ObjectRepositoryItem item, String data)\r\n   at BizAPP.Automation.Framework.Execution.TestStepRunner.Execute(TestStep model, TestStepRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.Execution.TestCaseRunner.Execute(TestCase model, TestCaseRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.Execution.TestModuleRunner.Execute(TestSuite model, TestSuiteRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.ExecutionEngine.RunModule(TestSuite module, TestSuiteRun existingRun, IDynamicContainer ctx, ReportService reportService, String browser)",
+            "RemoteStackTraceString": null,
+            "RemoteStackIndex": 0,
+            "ExceptionMethod": "8\nUnpackAndThrowOnError\nBizAPP.Automation.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53cc556ed6501d24\nOpenQA.Selenium.Remote.RemoteWebDriver\nVoid UnpackAndThrowOnError(OpenQA.Selenium.Remote.Response)",
+            "HResult": -2146233088,
+            "Source": "BizAPP.Automation.Common",
+            "WatsonBuckets": null
+          },
+          "ScreenSnapshot": "BizAPP.Automation.Common.TestStepResult",
+          "Id": "TS_006",
+          "Description": "Enter mail on Login popup",
+          "Model": {
+            "Id": "TS_006",
+            "Description": "Enter mail on Login popup",
+            "PageObject": "Cart_Login_Email_txtbox",
+            "ActionKeyword": "input"
+          }
+        }
+      ],
+      "Id": "VC_TestCaseID_7",
+      "Description": "PlaceOrderAsExistingCanada Audult User",
+      "Model": {
+        "Id": "VC_TestCaseID_7",
+        "TemplateId": "PlaceOrderAsExistingCanAdultUser",
+        "Description": "PlaceOrderAsExistingCanada Audult User",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true,
+        "DependentOn": "VC_TestCaseID_6"
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {
+    "VC_TestCaseID_7.TS_003.Cart_Email_txtbox": "",
+    "VC_TestCaseID_7.Cart_Email_txtbox": "",
+    "VC_TestCaseID_7.TS_006.Cart_Login_Email_txtbox": "",
+    "VC_TestCaseID_7.Cart_Login_Email_txtbox": ""
+  },
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

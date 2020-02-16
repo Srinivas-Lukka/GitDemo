@@ -1,0 +1,26 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [],
+      "Id": "VC_TestCaseID_7",
+      "Description": "PlaceOrderAsExistingCanada Audult User",
+      "Model": {
+        "Id": "VC_TestCaseID_7",
+        "TemplateId": "PlaceOrderAsExistingCanAdultUser",
+        "Description": "PlaceOrderAsExistingCanada Audult User",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true,
+        "DependentOn": "VC_TestCaseID_6"
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

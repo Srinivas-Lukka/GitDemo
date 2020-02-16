@@ -1,0 +1,12 @@
+{
+  "TestCaseRuns": [],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "CAMP",
+  "Description": "This Module Validates the CAMP functionalities ",
+  "Model": {
+    "Id": "CAMP",
+    "Description": "This Module Validates the CAMP functionalities ",
+    "RunMode": true
+  }
+}

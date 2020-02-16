@@ -1,0 +1,49 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "TemplateRun": {
+            "TestStepRuns": [],
+            "AllResults": {},
+            "Id": "VIBE_Login",
+            "Description": "Running template VIBE_Login",
+            "Model": {
+              "Id": "VIBE_Login",
+              "TemplateId": "VIBE_Login",
+              "Description": "Running template VIBE_Login",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_001",
+          "Description": "To enter Email and password",
+          "Model": {
+            "Id": "TS_001",
+            "Description": "To enter Email and password",
+            "PageObject": " ",
+            "ActionKeyword": "VIBE_Login"
+          }
+        }
+      ],
+      "AllResults": {},
+      "Id": "VC_TestCaseID_21",
+      "Description": "CreateOffer",
+      "Model": {
+        "Id": "VC_TestCaseID_21",
+        "TemplateId": "CreateOffer",
+        "Description": "CreateOffer",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

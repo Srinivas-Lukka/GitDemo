@@ -1,0 +1,26 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [],
+      "AllResults": {},
+      "Id": "VC_TestCaseID_20",
+      "Description": "InviteAmbassador",
+      "Model": {
+        "Id": "VC_TestCaseID_20",
+        "TemplateId": "InviteAmbassador",
+        "Description": "InviteAmbassador",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Error": {
+            "ClassName": "OpenQA.Selenium.WebDriverException",
+            "Message": "The HTTP request to the remote WebDriver server for URL http://localhost:62076/session/2a008eaa4ee549d28891767a2cecbb15/url timed out after 60 seconds.",
+            "Data": null,
+            "InnerException": {
+              "ClassName": "System.Net.WebException",
+              "Message": "The operation has timed out",
+              "Data": null,
+              "InnerException": null,
+              "HelpURL": null,
+              "StackTraceString": "   at System.Net.HttpWebRequest.GetResponse()\r\n   at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)",
+              "RemoteStackTraceString": null,
+              "RemoteStackIndex": 0,
+              "ExceptionMethod": "8\nGetResponse\nSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Net.HttpWebRequest\nSystem.Net.WebResponse GetResponse()",
+              "HResult": -2146233079,
+              "Source": "System",
+              "WatsonBuckets": null
+            },
+            "HelpURL": null,
+            "StackTraceString": "   at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)\r\n   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)\r\n   at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.set_Url(String value)\r\n   at BizAPP.Automation.Framework.Actions.NavigateToUrlAction.Execute(ObjectRepositoryItem item, String data)\r\n   at BizAPP.Automation.Framework.Execution.TestStepRunner.ExecuteStep(TestStep model, TestStepRun run, ITestNode node, TestDataMapping dataMapping, TestData data, String actionKeyword, AutomationService automationService)",
+            "RemoteStackTraceString": null,
+            "RemoteStackIndex": 0,
+            "ExceptionMethod": "8\nMakeHttpRequest\nBizAPP.Automation.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=53cc556ed6501d24\nOpenQA.Selenium.Remote.HttpCommandExecutor\nHttpResponseInfo MakeHttpRequest(HttpRequestInfo)",
+            "HResult": -2146233088,
+            "Source": "BizAPP.Automation.Common",
+            "WatsonBuckets": null
+          },
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        }
+      ],
+      "AllResults": {},
+      "Id": "VC_TestCaseID_14",
+      "Description": "Purchasing a product with UK contry as an Adult",
+      "Model": {
+        "Id": "VC_TestCaseID_14",
+        "TemplateId": "PurchaseProductSuccessUkAdult",
+        "Description": "Purchasing a product with UK contry as an Adult",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [],
+            "Id": "CreateAccount",
+            "Description": "Running template CreateAccount",
+            "Model": {
+              "Id": "CreateAccount",
+              "TemplateId": "CreateAccount",
+              "Description": "Running template CreateAccount",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Description": "To enter Email and password",
+          "Model": {
+            "Id": "TS_003",
+            "Description": "To enter Email and password",
+            "PageObject": " ",
+            "ActionKeyword": "CreateAccount"
+          }
+        }
+      ],
+      "Id": "VC_TestCaseID_4",
+      "Description": "Purchasing a product with US contry as a Child",
+      "Model": {
+        "Id": "VC_TestCaseID_4",
+        "TemplateId": "PurchaseProductSuccessUSchild",
+        "Description": "Purchasing a product with US contry as a Child",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

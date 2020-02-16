@@ -1,0 +1,73 @@
+    Running module CAMP - This Module Validates the CAMP functionalities  started
+        Running test case CAMP_TestCaseID_1 - Validate Login to CAMP started
+            Running test step TS_001 - Open the Browser started
+            Running test step TS_001 - Open the Browser ended
+            Running test step TS_002 - Navigate to URL started
+            https://apps-staging.viome.com
+            Running test step TS_002 - Navigate to URL ended
+            Running test step TS_005 - Enter Email started
+            Using page object 'SSO_Email', xpath './/*[@id='email']', Frame 'class=embed-responsive-item'
+            Using data 'santhosh.rakunde+stg1@viome.com'
+            Running test step TS_005 - Enter Email ended
+            Running test step TS_015 - Enter Password started
+            Using page object 'SSO_Password', xpath './/*[@id='password']', Frame 'class=embed-responsive-item'
+            Using data 'test123'
+            Running test step TS_015 - Enter Password ended
+            Running test step TS_016 - Click on Submit started
+            Using page object 'SSO_Submit', xpath '//button[@type='submit']', Frame 'class=embed-responsive-item'
+            Running test step TS_016 - Click on Submit ended
+        Running test case CAMP_TestCaseID_1 - Validate Login to CAMP ended
+        Running test case CAMP_TestCaseID_2 - Verify Plan Summary started
+            Running test step TS_001 -  started
+            Waiting for 5 seconds timeout
+            Running test step TS_001 -  ended
+            Running test step TS_002 - Click on Plan Summary started
+            Using page object 'CAMP_HomePage_PlanSummary', xpath '//p[@class='text-description-terniary to-upper']', Frame ''
+            VerifyAction - Validation Result:'True'
+            Running test step TS_002 - Click on Plan Summary ended
+            Running test step TS_003 - Click on Science started
+            Using page object 'CAMP_HomePage_Header_Science', xpath './/a[@href='https://www.viome.com/our-science']', Frame ''
+            Running test step TS_003 - Click on Science ended
+            Running test step TS_004 - Click on How it Works started
+            Using page object 'CAMP_HomePage_Header_HowitWorks', xpath './/a[@href='https://www.viome.com/results']', Frame ''
+            Running test step TS_004 - Click on How it Works ended
+            Running test step TS_005 - Click on GetHelp started
+            Using page object 'CAMP_HomePage_Header_GetHelp', xpath './/a[@href='https://www.viome.com/support']', Frame ''
+            Running test step TS_005 - Click on GetHelp ended
+            Running test step TS_006 - Click on Blog started
+            Using page object 'CAMP_HomePage_Header_Blog', xpath './/a[@href='https://www.viome.com/blog']', Frame ''
+            Running test step TS_006 - Click on Blog ended
+            Running test step TS_007 - Click on Buy Now started
+            Using page object 'CAMP_HomePage_BuyNow', xpath '//a[contains(text(),"Buy Now")]', Frame ''
+            Running test step TS_007 - Click on Buy Now ended
+            Running test step TS_008 - Click on Home page started
+            Using page object 'CAMP_HomePage_Viome', xpath '//img[@src = 'TestResource.aspx?resize=1&v=2&aid=&id2=EVibeM6ab65']', Frame ''
+            Running test step TS_008 - Click on Home page ended
+            Running test step TS_009 - Click on Send invites started
+            Using page object 'CAMP_HomePage_Send Invites', xpath '//a[contains(text(),"Send Invites")]', Frame ''
+            Running test step TS_009 - Click on Send invites ended
+            Running test step TS_010 - Click on Back to Account started
+            Using page object 'CAMP_MyFive_Back', xpath '//span[contains(text(),"Back to Account")]', Frame ''
+            no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),"Back to Account")]"}
+  (Session info: chrome=67.0.3396.99)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)
+
+            Exception occurred: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),"Back to Account")]"}
+  (Session info: chrome=67.0.3396.99)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)
+
+            Running test step TS_010 - Click on Back to Account ended
+        Exception:no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),"Back to Account")]"}
+  (Session info: chrome=67.0.3396.99)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)
+, Stack:   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at BizAPP.Automation.Common.SeleniumAction.GetItem[T](ObjectRepositoryItem item)
+   at BizAPP.Automation.Common.SeleniumAction.ElementAction(ObjectRepositoryItem item, Func`2 callback)
+   at BizAPP.Automation.Framework.Actions.ClickAction.Execute(ObjectRepositoryItem item, String data)
+   at BizAPP.Automation.Framework.Execution.TestStepRunner.Execute(TestStep model, TestStepRun run, ITestNode node, TestDataMapping dataMapping, TestData data)
+   at BizAPP.Automation.Framework.Execution.TestCaseRunner.Execute(TestCase model, TestCaseRun run, ITestNode node, TestDataMapping dataMapping, TestData data)
+   at BizAPP.Automation.Framework.Execution.TestModuleRunner.Execute(TestSuite model, TestSuiteRun run, ITestNode node, TestDataMapping dataMapping, TestData data)
+        Running test case CAMP_TestCaseID_2 - Verify Plan Summary ended
+    Timed out after 20 seconds
+    Running module CAMP - This Module Validates the CAMP functionalities  ended

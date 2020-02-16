@@ -1,0 +1,493 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate(cart)"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "Enter Email",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "Enter Email",
+                  "PageObject": "Cart_Email_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "Enter \"Create Password\"",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "Enter \"Create Password\"",
+                  "PageObject": "Cart_CreatePassword_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "CreateAccount",
+            "Description": "Running template CreateAccount",
+            "Success": true,
+            "Model": {
+              "Id": "CreateAccount",
+              "TemplateId": "CreateAccount",
+              "Description": "Running template CreateAccount",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Description": "Enter Email",
+          "Success": true,
+          "Model": {
+            "Id": "TS_003",
+            "Description": "Enter Email",
+            "PageObject": " ",
+            "ActionKeyword": "CreateAccount"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "To enter First name",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "To enter First name",
+                  "PageObject": "Cart_FirstName_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "To enter Last name",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "To enter Last name",
+                  "PageObject": "Cart_LastName_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_003",
+                "Description": "To select a value from Country",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_003",
+                  "Description": "To select a value from Country",
+                  "PageObject": "Cart_Country_dropdown",
+                  "ActionKeyword": "select"
+                }
+              },
+              {
+                "Id": "TS_004",
+                "Description": "To enter Address",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_004",
+                  "Description": "To enter Address",
+                  "PageObject": "Cart_Address_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_007",
+                "Description": "To enter Zipcode",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_007",
+                  "Description": "To enter Zipcode",
+                  "PageObject": "Cart_ZipCode_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "To enter Apt, Suite, Etc. ",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "To enter Apt, Suite, Etc. ",
+                  "PageObject": "Cart_Apt_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "FillShippingAdd",
+            "Description": "Running template FillShippingAdd",
+            "Success": true,
+            "Model": {
+              "Id": "FillShippingAdd",
+              "TemplateId": "FillShippingAdd",
+              "Description": "Running template FillShippingAdd",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_004",
+          "Description": "To fill Shipping address",
+          "Success": true,
+          "Model": {
+            "Id": "TS_004",
+            "Description": "To fill Shipping address",
+            "ActionKeyword": "FillShippingAdd"
+          }
+        },
+        {
+          "Id": "TS_005",
+          "Description": "Waiting to display city name",
+          "Success": true,
+          "Model": {
+            "Id": "TS_005",
+            "Description": "Waiting to display city name",
+            "ActionKeyword": "waitfor(3)"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "To enter Card number",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "To enter Card number",
+                  "PageObject": "Cart_CardNumber_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "waiting",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "waiting",
+                  "ActionKeyword": "waitfor(2)"
+                }
+              },
+              {
+                "Id": "TS_003",
+                "Description": "To enter Expiry date",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_003",
+                  "Description": "To enter Expiry date",
+                  "PageObject": "Cart_ExpiryDate",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_004",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_004",
+                  "ActionKeyword": "waitfor(2)"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "To enter CVV number",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "To enter CVV number",
+                  "PageObject": "Cart_CVV_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "FillPayment",
+            "Description": "Running template FillPayment",
+            "Success": true,
+            "Model": {
+              "Id": "FillPayment",
+              "TemplateId": "FillPayment",
+              "Description": "Running template FillPayment",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_006",
+          "Description": "Enter Payment Details",
+          "Success": true,
+          "Model": {
+            "Id": "TS_006",
+            "Description": "Enter Payment Details",
+            "ActionKeyword": "FillPayment"
+          }
+        },
+        {
+          "Id": "TS_007",
+          "Description": "Wait before clicking on next button",
+          "Success": true,
+          "Model": {
+            "Id": "TS_007",
+            "Description": "Wait before clicking on next button",
+            "ActionKeyword": "waitfor(5)"
+          }
+        },
+        {
+          "Result": {
+            "Result": true,
+            "ExpectedValue": "ESSENTIAL PLAN",
+            "ActualValue": "ESSENTIAL PLAN"
+          },
+          "Id": "TS_008",
+          "Description": "Verify Product Name",
+          "Success": true,
+          "Model": {
+            "Id": "TS_008",
+            "Description": "Verify Product Name",
+            "PageObject": "Cart_ProductName_label",
+            "ActionKeyword": "verify(ESSENTIAL PLAN)"
+          }
+        },
+        {
+          "Result": {
+            "Result": true,
+            "ExpectedValue": "Annual Service",
+            "ActualValue": "Annual Service"
+          },
+          "Id": "TS_009",
+          "Description": "VerifyProduct Term",
+          "Success": true,
+          "Model": {
+            "Id": "TS_009",
+            "Description": "VerifyProduct Term",
+            "PageObject": "Cart_ProductTerm_label",
+            "ActionKeyword": "verify(Annual Service)"
+          }
+        },
+        {
+          "Result": {
+            "Result": true,
+            "ExpectedValue": "5-7 Business Days",
+            "ActualValue": "5-7 Business Days"
+          },
+          "Id": "TS_010",
+          "Description": "Verify Stndard Shipping days",
+          "Success": true,
+          "Model": {
+            "Id": "TS_010",
+            "Description": "Verify Stndard Shipping days",
+            "PageObject": "Cart_StdShipping_label",
+            "ActionKeyword": "verify(5-7 Business Days)"
+          }
+        },
+        {
+          "Id": "TS_011",
+          "Description": "Proceed Next to Consent screen",
+          "Success": true,
+          "Model": {
+            "Id": "TS_011",
+            "Description": "Proceed Next to Consent screen",
+            "PageObject": "Cart_Next_btn",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Id": "TS_012",
+          "Description": "To select 'Are you 18 or above.?' radio button",
+          "Success": true,
+          "Model": {
+            "Id": "TS_012",
+            "Description": "To select 'Are you 18 or above.?' radio button",
+            "PageObject": "Cart_Age_Yes_radio",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Result": {
+            "Result": true,
+            "ExpectedValue": "Consent",
+            "ActualValue": "Consent"
+          },
+          "Id": "TS_013",
+          "Description": "Verifying displaying of Consent",
+          "Success": true,
+          "Model": {
+            "Id": "TS_013",
+            "Description": "Verifying displaying of Consent",
+            "PageObject": "Cart_Consent_label",
+            "ActionKeyword": "verify(Consent)"
+          }
+        },
+        {
+          "Id": "TS_014",
+          "Description": "To check 'I have read the informed…' consent",
+          "Success": true,
+          "Model": {
+            "Id": "TS_014",
+            "Description": "To check 'I have read the informed…' consent",
+            "PageObject": "Cart_Consent_agree_cbox",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Id": "TS_015",
+          "Description": "Clik on Place Order",
+          "Success": true,
+          "Model": {
+            "Id": "TS_015",
+            "Description": "Clik on Place Order",
+            "PageObject": "Cart_PlaceOrder_btn",
+            "ActionKeyword": "click"
+          }
+        },
+        {
+          "Id": "TS_016",
+          "Description": "Wait for success page to display",
+          "Success": true,
+          "Model": {
+            "Id": "TS_016",
+            "Description": "Wait for success page to display",
+            "ActionKeyword": "waitfor(20)"
+          }
+        },
+        {
+          "Id": "TS_017",
+          "Description": "Check document/page url is cart success",
+          "Success": true,
+          "Model": {
+            "Id": "TS_017",
+            "Description": "Check document/page url is cart success",
+            "ActionKeyword": "waitForUrlContains(cartsuccess)"
+          }
+        },
+        {
+          "Result": {
+            "Result": "223566822"
+          },
+          "Id": "TS_018",
+          "Description": "Capture Order number",
+          "Success": true,
+          "Model": {
+            "Id": "TS_018",
+            "Description": "Capture Order number",
+            "PageObject": "Cart_OrderNumber",
+            "ActionKeyword": "capture"
+          }
+        },
+        {
+          "Result": {
+            "Result": true,
+            "ExpectedValue": "[0-9]{9,}",
+            "ActualValue": "223566822"
+          },
+          "Id": "TS_019",
+          "Description": "Assert order number is numeric and has 9+ digits",
+          "Success": true,
+          "Model": {
+            "Id": "TS_019",
+            "Description": "Assert order number is numeric and has 9+ digits",
+            "PageObject": "Cart_OrderNumber",
+            "ActionKeyword": "verifyMatches([0-9]{9,})"
+          }
+        },
+        {
+          "Id": "TS_020",
+          "Description": "Take screen snapshot of order",
+          "Success": true,
+          "Model": {
+            "Id": "TS_020",
+            "Description": "Take screen snapshot of order",
+            "ActionKeyword": "screenshot"
+          }
+        },
+        {
+          "Id": "TS_021",
+          "Description": "close browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_021",
+            "Description": "close browser",
+            "ActionKeyword": "closeBrowser"
+          }
+        }
+      ],
+      "AllResults": {
+        "Cart_Email_txtbox": "srinivas.lukka+1535626734@viome.com",
+        "Cart_CreatePassword_txtbox": "welcome",
+        "Cart_FirstName_txtbox": "Srinivas",
+        "Cart_LastName_txtbox": "Lukka",
+        "Cart_Country_dropdown": "United States",
+        "Cart_Address_txtbox": "1 Infinite Loop",
+        "Cart_ZipCode_txtbox": "95014",
+        "Cart_Apt_txtbox": null,
+        "Cart_CardNumber_txtbox": "4242424242424242",
+        "Cart_ExpiryDate": "0220",
+        "Cart_CVV_txtbox": "123",
+        "Cart_ProductName_label": "True",
+        "Cart_ProductTerm_label": "True",
+        "Cart_StdShipping_label": "True",
+        "Cart_Consent_label": "True",
+        "Cart_OrderNumber": "True"
+      },
+      "Id": "VC_TestCaseID_1",
+      "Description": "Purchasing a product with US contry as an Adult",
+      "Success": true,
+      "Model": {
+        "Id": "VC_TestCaseID_1",
+        "TemplateId": "PurchaseProductSuccessUSadult",
+        "Description": "Purchasing a product with US contry as an Adult",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {
+    "VC_TestCaseID_1.Cart_Email_txtbox": "srinivas.lukka+1535626734@viome.com",
+    "VC_TestCaseID_1.Cart_CreatePassword_txtbox": "welcome",
+    "VC_TestCaseID_1.Cart_FirstName_txtbox": "Srinivas",
+    "VC_TestCaseID_1.Cart_LastName_txtbox": "Lukka",
+    "VC_TestCaseID_1.Cart_Country_dropdown": "United States",
+    "VC_TestCaseID_1.Cart_Address_txtbox": "1 Infinite Loop",
+    "VC_TestCaseID_1.Cart_ZipCode_txtbox": "95014",
+    "VC_TestCaseID_1.Cart_Apt_txtbox": null,
+    "VC_TestCaseID_1.Cart_CardNumber_txtbox": "4242424242424242",
+    "VC_TestCaseID_1.Cart_ExpiryDate": "0220",
+    "VC_TestCaseID_1.Cart_CVV_txtbox": "123",
+    "VC_TestCaseID_1.Cart_ProductName_label": "True",
+    "VC_TestCaseID_1.Cart_ProductTerm_label": "True",
+    "VC_TestCaseID_1.Cart_StdShipping_label": "True",
+    "VC_TestCaseID_1.Cart_Consent_label": "True",
+    "VC_TestCaseID_1.Cart_OrderNumber": "True"
+  },
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Success": true,
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

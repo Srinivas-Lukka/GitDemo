@@ -1,0 +1,233 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "Enter Email",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "Enter Email",
+                  "PageObject": "Cart_Email_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "Enter \"Create Password\"",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "Enter \"Create Password\"",
+                  "PageObject": "Cart_CreatePassword_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "CreateAccount",
+            "Description": "Running template CreateAccount",
+            "Success": true,
+            "Model": {
+              "Id": "CreateAccount",
+              "TemplateId": "CreateAccount",
+              "Description": "Running template CreateAccount",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Description": "Enter Email",
+          "Success": true,
+          "Model": {
+            "Id": "TS_003",
+            "Description": "Enter Email",
+            "PageObject": " ",
+            "ActionKeyword": "CreateAccount"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Id": "TS_001",
+                "Description": "To enter First name",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "To enter First name",
+                  "PageObject": "Cart_FirstName_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_002",
+                "Description": "To enter Last name",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_002",
+                  "Description": "To enter Last name",
+                  "PageObject": "Cart_LastName_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_003",
+                "Description": "To select a value from Country",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_003",
+                  "Description": "To select a value from Country",
+                  "PageObject": "Cart_Country_dropdown",
+                  "ActionKeyword": "select"
+                }
+              },
+              {
+                "Id": "TS_004",
+                "Description": "To enter Address",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_004",
+                  "Description": "To enter Address",
+                  "PageObject": "Cart_Address_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_005",
+                "Description": "To enter Apt, Suite, Etc. ",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_005",
+                  "Description": "To enter Apt, Suite, Etc. ",
+                  "PageObject": "Cart_Apt_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_006",
+                "Description": "To enter City",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_006",
+                  "Description": "To enter City",
+                  "PageObject": "Cart_City_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_007",
+                "Description": "To enter Province",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_007",
+                  "Description": "To enter Province",
+                  "PageObject": "Cart_Province_txtbox",
+                  "ActionKeyword": "input"
+                }
+              },
+              {
+                "Id": "TS_008",
+                "Description": "To enter Zipcode",
+                "Success": true,
+                "Model": {
+                  "Id": "TS_008",
+                  "Description": "To enter Zipcode",
+                  "PageObject": "Cart_ZipCode_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "AllResults": {},
+            "Id": "FillShippingCanUK",
+            "Description": "Running template FillShippingCanUK",
+            "Success": true,
+            "Model": {
+              "Id": "FillShippingCanUK",
+              "TemplateId": "FillShippingCanUK",
+              "Description": "Running template FillShippingCanUK",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_004",
+          "Description": "To fill Shipping address",
+          "Success": true,
+          "Model": {
+            "Id": "TS_004",
+            "Description": "To fill Shipping address",
+            "ActionKeyword": "FillShippingCanUK"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [],
+            "AllResults": {},
+            "Id": "FillPayment",
+            "Description": "Running template FillPayment",
+            "Model": {
+              "Id": "FillPayment",
+              "TemplateId": "FillPayment",
+              "Description": "Running template FillPayment",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_005",
+          "Description": "Enter Payment Details",
+          "Model": {
+            "Id": "TS_005",
+            "Description": "Enter Payment Details",
+            "ActionKeyword": "FillPayment"
+          }
+        }
+      ],
+      "AllResults": {
+        "Cart_Email_txtbox": "noemy_aufderhar@bins.biz",
+        "Cart_CreatePassword_txtbox": "{hI&kuJY"
+      },
+      "Id": "VC_TestCaseID_12",
+      "Description": "PurchaseProductSuccessCanada as Child with Death wish 2",
+      "Model": {
+        "Id": "VC_TestCaseID_12",
+        "TemplateId": "PurchaseProductSuccessCanC2",
+        "Description": "PurchaseProductSuccessCanada as Child with Death wish 2",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {
+    "VC_TestCaseID_12.Cart_Email_txtbox": "noemy_aufderhar@bins.biz",
+    "VC_TestCaseID_12.Cart_CreatePassword_txtbox": "{hI&kuJY"
+  },
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}

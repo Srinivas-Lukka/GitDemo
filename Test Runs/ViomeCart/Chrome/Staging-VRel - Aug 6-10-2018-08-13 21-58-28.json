@@ -1,0 +1,93 @@
+{
+  "TestCaseRuns": [
+    {
+      "TestStepRuns": [
+        {
+          "Id": "TS_001",
+          "Description": "Open the Browser",
+          "Success": true,
+          "Model": {
+            "Id": "TS_001",
+            "Description": "Open the Browser",
+            "ActionKeyword": "openBrowser"
+          }
+        },
+        {
+          "Id": "TS_002",
+          "Description": "Navigate to URL",
+          "Success": true,
+          "Model": {
+            "Id": "TS_002",
+            "Description": "Navigate to URL",
+            "ActionKeyword": "navigate"
+          }
+        },
+        {
+          "TemplateRun": {
+            "TestStepRuns": [
+              {
+                "Error": {
+                  "ClassName": "System.InvalidCastException",
+                  "Message": "Specified cast is not valid.",
+                  "Data": null,
+                  "InnerException": null,
+                  "HelpURL": null,
+                  "StackTraceString": "   at System.Data.OleDb.ColumnBinding.ValueString()\r\n   at System.Data.OleDb.OleDbDataReader.GetString(Int32 ordinal)\r\n   at Dapper.WrappedReader.System.Data.IDataRecord.GetString(Int32 i)\r\n   at BizAPP.Automation.Framework.DataSource.Loaders.ExcelObjectRepositoryLoader.ReadItem[T](IDataReader reader, T item)\r\n   at BizAPP.Automation.Framework.DataSource.Loaders.ItemRepositoryLoader`1.InternalReadMany[T](DbConnection conn, String qry, String connString, Object param)\r\n   at BizAPP.Automation.Framework.DataSource.Loaders.ExcelObjectRepositoryLoader.ReadMany[T](DbConnection conn, String qry, String connString, Object param)\r\n   at BizAPP.Automation.Framework.DataSource.Loaders.ExcelDataLoader.ReadMany[T](AutomationContainer context, String rootFolder, String qry, String connString, String dataSource, Object param)\r\n   at BizAPP.Automation.Framework.DataSource.Loaders.ItemRepositoryLoader`1.ReadFromManyFiles[T](AutomationContainer context, String rootFolder, String qry, String connString, String dataSource, Object param)\r\n   at BizAPP.Automation.Framework.DataSource.Loaders.ExcelObjectRepositoryLoader.ReadMany[T](AutomationContainer context, String rootFolder, String qry, String connString, String dataSource, Object param)\r\n   at BizAPP.Automation.Framework.DataSource.ExcelDataSource.GetItems[T](String id, String dataSource)\r\n   at BizAPP.Automation.Framework.Services.ObjectRepositoryService.LoadFromRepository()\r\n   at System.Lazy`1.CreateValue()\r\n   at System.Lazy`1.LazyInitValue()\r\n   at System.Lazy`1.get_Value()\r\n   at BizAPP.Automation.Framework.Services.ItemRepositoryService`2.GetItem(String id)\r\n   at BizAPP.Automation.Framework.Execution.TestStepRunner.Execute(TestStep model, TestStepRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.Execution.TestCaseRunner.Execute(TestCase model, TestCaseRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.Execution.TestStepRunner.ExecuteTemplate(TestStepRun run, ITestNode node, TestDataMapping dataMapping, TestData data, String actionKeyword)\r\n   at BizAPP.Automation.Framework.Execution.TestStepRunner.Execute(TestStep model, TestStepRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.Execution.TestCaseRunner.Execute(TestCase model, TestCaseRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.Execution.TestModuleRunner.Execute(TestSuite model, TestSuiteRun run, ITestNode node, TestDataMapping dataMapping, TestData data)\r\n   at BizAPP.Automation.Framework.ExecutionEngine.RunModule(TestSuite module, TestSuiteRun existingRun, IDynamicContainer ctx, ReportService reportService, String browser)",
+                  "RemoteStackTraceString": null,
+                  "RemoteStackIndex": 0,
+                  "ExceptionMethod": "8\nValueString\nSystem.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Data.OleDb.ColumnBinding\nSystem.String ValueString()",
+                  "HResult": -2147467262,
+                  "Source": "System.Data",
+                  "WatsonBuckets": null
+                },
+                "ScreenSnapshot": "BizAPP.Automation.Common.TestStepResult",
+                "Id": "TS_001",
+                "Description": "Enter Email",
+                "Model": {
+                  "Id": "TS_001",
+                  "Description": "Enter Email",
+                  "PageObject": "Cart_Email_txtbox",
+                  "ActionKeyword": "input"
+                }
+              }
+            ],
+            "Id": "CreateAccount",
+            "Description": "Running template CreateAccount",
+            "Model": {
+              "Id": "CreateAccount",
+              "TemplateId": "CreateAccount",
+              "Description": "Running template CreateAccount",
+              "IsTemplate": true
+            }
+          },
+          "Id": "TS_003",
+          "Description": "Enter Email",
+          "Model": {
+            "Id": "TS_003",
+            "Description": "Enter Email",
+            "PageObject": " ",
+            "ActionKeyword": "CreateAccount"
+          }
+        }
+      ],
+      "Id": "VC_TestCaseID_6",
+      "Description": "PurchaseProductSuccessCanada as Audult with Death wish 1",
+      "Model": {
+        "Id": "VC_TestCaseID_6",
+        "TemplateId": "PurchaseProductSuccessCanA1",
+        "Description": "PurchaseProductSuccessCanada as Audult with Death wish 1",
+        "TestModuleId": "ViomeCart",
+        "RunMode": true
+      }
+    }
+  ],
+  "Browser": "Chrome",
+  "AllResults": {},
+  "Id": "ViomeCart",
+  "Description": "This Module Validates the Activity of Buying the Viome product ",
+  "Model": {
+    "Id": "ViomeCart",
+    "Description": "This Module Validates the Activity of Buying the Viome product ",
+    "RunMode": true
+  }
+}
